@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero de Ajedrez</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/index.css') }}">
+</head>
+<body>
+    <main class="contenedor">
+        <h1>Tablero de Ajedrez</h1>
+        <div class="filas">
+            {% for fila in range(num_filas) %}
+            <div class="columnas">
+                {% for columna in range(num_columnas) %}
+                    <span class="casilla" style="background-color: {{ colores[fila][columna] }}"></span>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>
